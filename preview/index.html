@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--color-accent:#2f5df6;--color-accent-strong:#1e46d4;--color-ink:#14181f;--color-body:#3d4450;--color-muted:#6b7280;--color-line:#e6e8ee;--color-surface:#fff;--color-surface-soft:#f5f7fb;--font-display:"Fraunces",Georgia,serif;--font-body:"Inter",system-ui,sans-serif;--text-sm:clamp(.875rem,.84rem + .2vw,.9375rem);--text-md:clamp(1rem,.95rem + .25vw,1.0625rem);--text-lg:clamp(1.25rem,1.1rem + .75vw,1.5rem);--text-xl:clamp(1.6rem,1.3rem + 1.5vw,2.25rem);--text-2xl:clamp(2.1rem,1.6rem + 2.5vw,3.4rem);--space-4:1rem;--space-5:1.5rem;--space-6:2.25rem;--space-7:3.5rem;--space-8:5rem;--radius-sm:8px;--radius-md:14px;--radius-lg:22px;--shadow-sm:0 1px 2px rgb(20 24 31/.06);--shadow-md:0 10px 30px -12px rgb(20 24 31/.18);--container:72rem;--header-h:4.25rem}
+:root{--color-accent:#2f5df6;--color-accent-strong:#1e46d4;--color-ink:#14181f;--color-body:#3d4450;--color-muted:#6b7280;--color-line:#e6e8ee;--color-surface:#fff;--color-surface-soft:#f5f7fb;--font-display:"Fraunces",Georgia,serif;--font-body:"Inter",system-ui,sans-serif;--text-sm:clamp(.875rem,.84rem + .2vw,.9375rem);--text-md:clamp(1rem,.95rem + .25vw,1.0625rem);--text-lg:clamp(1.25rem,1.1rem + .75vw,1.5rem);--text-xl:clamp(1.6rem,1.3rem + 1.5vw,2.25rem);--text-2xl:clamp(2.4rem,1.7rem + 3.6vw,4.4rem);--space-4:1rem;--space-5:1.5rem;--space-6:2.25rem;--space-7:3.5rem;--space-8:5rem;--radius-sm:8px;--radius-md:14px;--radius-lg:22px;--shadow-sm:0 1px 2px rgb(20 24 31/.06);--shadow-md:0 10px 30px -12px rgb(20 24 31/.18);--container:72rem;--header-h:4.25rem}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;font-family:var(--font-body);font-size:var(--text-md);line-height:1.7;color:var(--color-body);background:var(--color-surface);-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:var(--font-display);color:var(--color-ink);line-height:1.2;margin:0 0 var(--space-4);font-weight:700}
@@ -32,14 +32,28 @@ img{max-width:100%;display:block}
 .btn--ghost:hover{border-color:var(--color-accent);color:var(--color-accent)}
 .hero{background:radial-gradient(60rem 30rem at 110% -10%,rgb(47 93 246/.14),transparent 60%),radial-gradient(40rem 24rem at -10% 110%,rgb(47 93 246/.1),transparent 60%),var(--color-surface-soft);border-bottom:1px solid var(--color-line);padding-block:var(--space-8);text-align:center}
 .hero__eyebrow{color:var(--color-accent);font-weight:600;font-size:var(--text-sm);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.75rem}
-.hero__title{font-size:var(--text-2xl);max-width:20ch;margin-inline:auto}
+.hero__title{font-size:var(--text-2xl);line-height:1.05;letter-spacing:-.02em;max-width:22ch;margin-inline:auto}
 .hero__lede{font-size:var(--text-lg);color:var(--color-muted);max-width:52ch;margin-inline:auto}
 .hero__actions{display:flex;justify-content:center;gap:.75rem;margin-top:var(--space-5);flex-wrap:wrap}
 .section__title{font-size:var(--text-xl);margin-bottom:var(--space-5)}
+.section--soft{background:var(--color-surface-soft);border-block:1px solid var(--color-line)}
 .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5)}
 .card{display:flex;flex-direction:column;background:var(--color-surface);border:1px solid var(--color-line);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:.2s}
 .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.card__media{aspect-ratio:8/5;display:block;background:linear-gradient(135deg,#dbe4ff,#f5f7fb)}
+.card:hover .card__media{transform:scale(1.04)}
+.card__media{aspect-ratio:8/5;display:block;background:linear-gradient(135deg,#dbe4ff,#f5f7fb);transition:transform .4s ease}
+.card__link span{display:inline-block;transition:transform .2s ease}
+.card:hover .card__link span{transform:translateX(3px)}
+.featured{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--space-6);align-items:center;background:var(--color-surface);border:1px solid var(--color-line);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:.2s}
+.featured:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.featured__media{display:block;overflow:hidden}
+.featured__media>div{aspect-ratio:16/10;background:linear-gradient(135deg,#dbe4ff,#eef2ff);transition:transform .4s ease}
+.featured:hover .featured__media>div{transform:scale(1.04)}
+.featured__body{padding:var(--space-5) var(--space-5) var(--space-5) 0}
+.featured__title{font-size:clamp(1.5rem,1.3rem + 1vw,2rem);margin-bottom:.75rem}
+.featured__title a{color:var(--color-ink)}
+.featured__title a:hover{color:var(--color-accent)}
+.featured__excerpt{color:var(--color-muted)}
 .card__body{display:flex;flex-direction:column;flex-grow:1;padding:var(--space-5)}
 .card__meta{color:var(--color-muted);font-size:.75rem;margin-bottom:.5rem}
 .card__title{font-size:var(--text-lg);margin-bottom:.5rem}
@@ -53,7 +67,7 @@ img{max-width:100%;display:block}
 .site-footer__menu a{color:#dfe3ea;font-size:var(--text-sm)}
 .site-footer__copy{font-size:.75rem;color:#8b93a3}
 @media (max-width:64em){.card-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:48em){.nav-toggle{display:inline-flex}.site-nav{position:absolute;top:var(--header-h);left:0;right:0;display:none;background:var(--color-surface);border-bottom:1px solid var(--color-line);box-shadow:var(--shadow-md);padding:.75rem 1.5rem 1.5rem}.site-nav.is-open{display:block}.site-nav__list{flex-direction:column;gap:0}.site-nav__list a{display:block;padding:.75rem 0;font-size:var(--text-md);border-bottom:1px solid var(--color-line)}.card-grid{grid-template-columns:1fr}.hero{padding-block:var(--space-7)}.section{padding-block:var(--space-6)}}
+@media (max-width:48em){.nav-toggle{display:inline-flex}.site-nav{position:absolute;top:var(--header-h);left:0;right:0;display:none;background:var(--color-surface);border-bottom:1px solid var(--color-line);box-shadow:var(--shadow-md);padding:.75rem 1.5rem 1.5rem}.site-nav.is-open{display:block}.site-nav__list{flex-direction:column;gap:0}.site-nav__list a{display:block;padding:.75rem 0;font-size:var(--text-md);border-bottom:1px solid var(--color-line)}.card-grid{grid-template-columns:1fr}.featured{grid-template-columns:1fr}.featured__body{padding:var(--space-5)}.hero{padding-block:var(--space-7)}.section{padding-block:var(--space-6)}}
 </style>
 </head>
 <body>
@@ -85,7 +99,22 @@ img{max-width:100%;display:block}
 		</div>
 	</section>
 
-	<section class="section" id="blog">
+	<section class="section">
+		<div class="container">
+			<h2 class="section__title">Nổi bật tuần này</h2>
+			<article class="featured">
+				<a class="featured__media" href="#" aria-hidden="true" tabindex="-1"><div></div></a>
+				<div class="featured__body">
+					<p class="card__meta">12/10/2026</p>
+					<h3 class="featured__title"><a href="#">Thiết kế web chuẩn responsive từ A đến Z</a></h3>
+					<p class="featured__excerpt">Tại sao mobile-first là nền tảng của mọi dự án hiện đại, cách xây dựng hệ thống design token cho màu sắc và typography, và quy trình kiểm thử trên từng breakpoint.</p>
+					<a class="card__link" href="#">Đọc tiếp <span aria-hidden="true">&rarr;</span></a>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<section class="section section--soft">
 		<div class="container">
 			<h2 class="section__title">Bài viết mới nhất</h2>
 			<div class="card-grid">
@@ -93,8 +122,8 @@ img{max-width:100%;display:block}
 					<a class="card__media" href="#" aria-hidden="true" tabindex="-1"></a>
 					<div class="card__body">
 						<p class="card__meta">12/10/2026</p>
-						<h3 class="card__title"><a href="#">Thiết kế web chuẩn responsive từ A đến Z</a></h3>
-						<p class="card__excerpt">Tại sao mobile-first là nền tảng của mọi dự án hiện đại và cách áp dụng đúng.</p>
+						<h3 class="card__title"><a href="#">Xây dựng design system cho website WordPress</a></h3>
+						<p class="card__excerpt">Định nghĩa color token và spacing scale giúp giao diện nhất quán, dễ bảo trì lâu dài.</p>
 						<a class="card__link" href="#">Đọc tiếp <span aria-hidden="true">&rarr;</span></a>
 					</div>
 				</article>
