@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thiết kế web chuẩn responsive từ A đến Z — Aurora Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+	<div class="container site-header__inner">
+		<a class="site-branding__link" href="index.html"><span class="site-branding__mark">A</span><span>Aurora Studio</span></a>
+		<button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav"><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span></button>
+		<nav class="site-nav" id="siteNav" aria-label="Primary">
+			<ul class="site-nav__list">
+				<li><a href="index.html">Trang chủ</a></li>
+				<li><a href="blog.html">Blog</a></li>
+				<li><a href="contact.html">Liên hệ</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<main class="section">
+	<div class="container">
+		<article class="single">
+			<p class="card__meta">12/10/2026 &middot; Nhóm: Thiết kế web</p>
+			<h1 class="page-header__title" style="font-size:var(--text-xl)">Thiết kế web chuẩn responsive từ A đến Z</h1>
+			<p class="single__meta">Đăng bởi Aurora Studio &middot; 7 phút đọc</p>
+
+			<div class="single__thumbnail" role="img" aria-label="Ảnh minh họa bài viết"></div>
+
+			<div class="single__content">
+				<p>Responsive design không còn là "tính năng nâng cao" — đó là yêu cầu mặc định. Hơn 60% lưu lượng web hiện đến từ điện thoại, và Google xếp hạng dựa trên trải nghiệm mobile trước tiên. Bài viết này tóm tắt quy trình mà tôi áp dụng cho mọi dự án redesign.</p>
+
+				<h2>1. Bắt đầu từ mobile, không phải desktop</h2>
+				<p>Mobile-first không có nghĩa là "làm bản mobile xong rồi phóng to". Nó là cách sắp xếp ưu tiên: với không gian hẹp, bạn buộc phải quyết định nội dung nào thật sự quan trọng. Khi mở rộng lên tablet và desktop, mỗi breakpoint chỉ thêm vào những gì còn thiếu — chứ không phải cắt bỏ những gì thừa.</p>
+
+				<h2>2. Dùng hệ thống khoảng cách và cỡ chữ linh hoạt</h2>
+				<p>Thay vì viết pixel cứng cho từng breakpoint, hãy dùng <code>clamp()</code> để cỡ chữ tự co giãn giữa hai giới hạn:</p>
+				<blockquote>font-size: clamp(2.4rem, 1.7rem + 3.6vw, 4.4rem); — tiêu đề lớn trên desktop, gọn gàng trên mobile, không cần media query.</blockquote>
+				<p>Tương tự với khoảng cách: một thang spacing (8, 16, 24, 56, 80px) dùng xuyên suốt giúp mọi trang có nhịp thị giác nhất quán.</p>
+
+				<h2>3. Kiểm thử trên thiết bị thật, đúng thứ tự</h2>
+				<ul>
+					<li><strong>360px</strong> — điện thoại nhỏ: kiểm tra chữ không bị cắt, nút dễ bấm (tối thiểu 44px).</li>
+					<li><strong>768px</strong> — tablet: nơi nav chuyển sang hamburger, lưới chuyển từ 3 cột xuống 1–2 cột.</li>
+					<li><strong>1440px</strong> — desktop lớn: kiểm tra nội dung không bị giãn quá rộng, container giới hạn tối đa.</li>
+				</ul>
+
+				<h2>Kết luận</h2>
+				<p>Responsive tốt là kết quả của một hệ thống — design token, fluid typography, quy trình kiểm thử — chứ không phải hàng chục media query viết tay. Khi hệ thống đúng, việc hỗ trợ thêm một thiết bị mới chỉ là chuyện của vài dòng CSS.</p>
+			</div>
+		</article>
+
+		<nav class="post-nav" aria-label="Bài viết">
+			<a href="blog.html">&larr; Quay lại blog</a>
+			<a href="post.html">Bài tiếp theo &rarr;</a>
+		</nav>
+	</div>
+</main>
+
+<footer class="site-footer">
+	<div class="container site-footer__inner">
+		<div>
+			<span class="site-branding__mark">A</span>
+			<p class="site-footer__copy" style="margin-top:.75rem">Demo cho dự án redesign WordPress — Aurora Theme v1.0</p>
+		</div>
+		<ul class="site-footer__menu">
+			<li><a href="index.html">Trang chủ</a></li>
+			<li><a href="blog.html">Blog</a></li>
+			<li><a href="contact.html">Liên hệ</a></li>
+		</ul>
+		<p class="site-footer__copy">&copy; 2026 Aurora Studio</p>
+	</div>
+</footer>
+
+<script>
+(function(){var t=document.getElementById('navToggle'),n=document.getElementById('siteNav');if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('is-open');t.setAttribute('aria-expanded',o?'true':'false')});}})();
+</script>
+</body>
+</html>

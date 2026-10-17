@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liên hệ — Aurora Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+	<div class="container site-header__inner">
+		<a class="site-branding__link" href="index.html"><span class="site-branding__mark">A</span><span>Aurora Studio</span></a>
+		<button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav"><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span></button>
+		<nav class="site-nav" id="siteNav" aria-label="Primary">
+			<ul class="site-nav__list">
+				<li><a href="index.html">Trang chủ</a></li>
+				<li><a href="blog.html">Blog</a></li>
+				<li><a href="contact.html" aria-current="page">Liên hệ</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<main>
+	<div class="page-header">
+		<div class="container">
+			<h1 class="page-header__title">Liên hệ</h1>
+			<p class="page-header__lede">Bạn có dự án cần làm mới giao diện? Hãy gửi vài dòng — tôi trả lời trong vòng 24 giờ.</p>
+		</div>
+	</div>
+
+	<section class="section">
+		<div class="container contact">
+			<div class="contact__info">
+				<h2>Thông tin liên hệ</h2>
+				<ul class="contact__list">
+					<li><strong>Email:</strong> <a href="mailto:hello@aurorastudio.dev">hello@aurorastudio.dev</a></li>
+					<li><strong>Giờ làm việc:</strong> Thứ 2 – Thứ 6, 9:00 – 18:00 (GMT+7)</li>
+					<li><strong>Hợp tác từ xa:</strong> Nhận dự án toàn cầu qua Upwork</li>
+				</ul>
+			</div>
+
+			<form class="contact__form" onsubmit="return false">
+				<div class="field">
+					<label for="name">Họ tên</label>
+					<input id="name" type="text" name="name" required>
+				</div>
+				<div class="field">
+					<label for="email">Email</label>
+					<input id="email" type="email" name="email" required>
+				</div>
+				<div class="field">
+					<label for="message">Nội dung</label>
+					<textarea id="message" name="message" rows="5" required></textarea>
+				</div>
+				<button class="btn btn--primary" type="submit">Gửi tin nhắn</button>
+				<p class="form-note">Demo giao diện — trên bản WordPress thật, form gửi qua admin-post.php với nonce bảo mật.</p>
+			</form>
+		</div>
+	</section>
+</main>
+
+<footer class="site-footer">
+	<div class="container site-footer__inner">
+		<div>
+			<span class="site-branding__mark">A</span>
+			<p class="site-footer__copy" style="margin-top:.75rem">Demo cho dự án redesign WordPress — Aurora Theme v1.0</p>
+		</div>
+		<ul class="site-footer__menu">
+			<li><a href="index.html">Trang chủ</a></li>
+			<li><a href="blog.html">Blog</a></li>
+			<li><a href="contact.html">Liên hệ</a></li>
+		</ul>
+		<p class="site-footer__copy">&copy; 2026 Aurora Studio</p>
+	</div>
+</footer>
+
+<script>
+(function(){var t=document.getElementById('navToggle'),n=document.getElementById('siteNav');if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('is-open');t.setAttribute('aria-expanded',o?'true':'false')});}})();
+</script>
+</body>
+</html>

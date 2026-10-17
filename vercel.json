@@ -4,6 +4,26 @@
 		{
 			"source": "/",
 			"destination": "/preview/index.html"
+		},
+		{
+			"source": "/index.html",
+			"destination": "/preview/index.html"
+		},
+		{
+			"source": "/blog.html",
+			"destination": "/preview/blog.html"
+		},
+		{
+			"source": "/post.html",
+			"destination": "/preview/post.html"
+		},
+		{
+			"source": "/contact.html",
+			"destination": "/preview/contact.html"
+		},
+		{
+			"source": "/assets/(.*)",
+			"destination": "/preview/assets/$1"
 		}
 	],
 	"headers": [
